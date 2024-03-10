@@ -1,0 +1,6 @@
+# checking sparse check out using checkout action
+- uses: actions/checkout@v4
+  with:
+    sparse-checkout: |
+      README.md
+    sparse-checkout-cone-mode: false
