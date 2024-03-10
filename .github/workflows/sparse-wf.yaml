@@ -1,0 +1,23 @@
+name: Checking sparse checkout
+on: 
+  workflow_dispatch:
+jobs:
+  sparse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: check full repo checkout
+        run: |
+          pwd
+          ls
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            README.md
+          sparse-checkout-cone-mode: false
+      - name: check single file checkout
+        run: |
+          pwd
+          ls
+          cat README.md
+          
