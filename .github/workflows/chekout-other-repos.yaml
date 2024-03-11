@@ -1,0 +1,26 @@
+name: Checkout other repos 
+on:
+  workflow_dispatch:
+jobs:
+  other-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: main
+    
+      - name: Checkout pub repo
+        uses: actions/checkout@v4
+        with:
+          repository: sathish-sign/pubrepo
+          path: pubrepo
+      - name: Checkout pvt repo
+        uses: actions/checkout@v4
+        with:
+          repository: sathish-sign/k8s-cheatsheet
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+          path: k8s-cheatsheet
+      - run: |
+          pwd
+          ls
