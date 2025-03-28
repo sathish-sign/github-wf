@@ -4,7 +4,10 @@ on:
 
 jobs:
   caller:
+    strategy:
+      matrix:
+        msg: [Once, Twice, Thrice]  
     uses: sathish-sign/github-wf/.github/workflows/reusable.yml@main
     with:
-      msg: "Called from caller workflow"
+      msg: "Called from caller workflow ${{ matrix.msg }}"
   
