@@ -1,0 +1,13 @@
+name: Re-usable workflow
+on:
+  workflow_call:
+    inputs:
+      msg:
+        required: true
+        type: string
+jobs:
+  resuse:
+    runs-on: ubuntu-latest
+    steps:
+    - name: re-use
+      run: echo "{{ inputs.msg }}"
