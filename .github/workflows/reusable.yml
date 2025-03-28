@@ -1,5 +1,6 @@
 name: Re-usable workflow
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       msg:
