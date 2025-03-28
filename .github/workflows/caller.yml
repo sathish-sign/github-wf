@@ -4,10 +4,7 @@ on:
 
 jobs:
   caller:
-    runs-on: ubuntu-latest
-    steps:
-    - name: caller
-      uses: sathish-sign/github-wf/.github/workflows/reusable.yml@main
-      with:
-        msg: "Called from caller workflow"
+    uses: sathish-sign/github-wf/.github/workflows/reusable.yml@main
+    with:
+      msg: "Called from caller workflow"
   
