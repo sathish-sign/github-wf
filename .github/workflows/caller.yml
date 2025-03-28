@@ -1,0 +1,13 @@
+name: Caller workflow
+on:
+ workflow_dispatch:
+
+jobs:
+  caller:
+    runs-on: ubuntu-latest
+    steps:
+    - name: caller
+      uses: sathish-sign/github-wf/.github/workflows/reusable.yml@main
+      with:
+        msg: "Called from caller workflow"
+  
