@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: re-use
-      run: echo "{{ inputs.msg }}"
+      run: echo ${{ inputs.msg }}
